@@ -2,12 +2,19 @@
   "compilerOptions": {
     "outDir": "./dist/",
     "noImplicitAny": true,
-    "module": "es6",
+    "module": "es2020",
     "target": "es5",
     "jsx": "react",
     "allowJs": true,
     "moduleResolution": "node",
     "strictNullChecks": true,
-    "downlevelIteration": true
-  }
+    "downlevelIteration": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "lib": ["es2021", "dom"],
+  },
+  "include": [
+    "src/**/*",
+    "./global.d.ts"
+  ]
 }

@@ -1,0 +1,16 @@
+// ==UserScript==
+// @name        ServiceNow Improvements
+// @namespace   https://github.com/FiggChristian/STS-ServiceNow-Plugin
+// @match       *://stanford.service-now.com/*
+// @match       *://mydevices.stanford.edu/*
+// @match       *://netdb.stanford.edu/*
+// @match       *://day.stanford.edu:9696/manage/dhcplog/check_db*
+// @version     3.0.0
+// @description Adds improvements to ServiceNow
+// @icon        https://stanford.service-now.com/stanford_favicon.png
+// @downloadURL https://raw.githubusercontent.com/FiggChristian/STS-ServiceNow-Plugin/main/dist/index.user.js
+// @updateURL   https://raw.githubusercontent.com/FiggChristian/STS-ServiceNow-Plugin/main/dist/index.user.js
+// @supportURL  https://github.com/FiggChristian/STS-ServiceNow-Plugin/issues
+// @homepageURL https://github.com/FiggChristian/STS-ServiceNow-Plugin/
+// @run-at      document-end
+// ==/UserScript==

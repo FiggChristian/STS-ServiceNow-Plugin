@@ -1,0 +1,12 @@
+{
+    "EXTENSION_PREFIX": "sts-service-now-plugin",
+    "CODE_DELIMITERS": {
+        "START": "[code]",
+        "END": "[/code]"
+    },
+    "REPLACEMENT_DELIMITERS": {
+        "START": "{{",
+        "END": "}}"
+    },
+    "MAX_REPLACEMENT_RECURSION_DEPTH": 10
+}

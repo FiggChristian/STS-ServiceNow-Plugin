@@ -12,7 +12,10 @@
     "storage"
   ],
   "host_permissions": [
-    "https://*.service-now.com/*"
+    "*://stanford.service-now.com/*",
+    "*://mydevices.stanford.edu/*",
+    "*://netdb.stanford.edu/*",
+    "*://day.stanford.edu/*"
   ],
   "action": {
     "default_icon": {

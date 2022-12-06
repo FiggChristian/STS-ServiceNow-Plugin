@@ -1,0 +1,93 @@
+@import '../constants.scss';
+
+.#{$EXTENSION_PREFIX}-auto-filler {
+    list-style: none;
+    padding: 0 !important;
+    margin: 0;
+    overflow-y: auto !important;
+    position: absolute !important;
+    max-height: 150px;
+    width: 260px;
+    box-sizing: border-box;
+    z-index: 3;
+}
+.#{$EXTENSION_PREFIX}-auto-filler li {
+    position: relative;
+    padding: 1px 5px 0 10px;
+    cursor: pointer;
+    display: flex;
+}
+
+.#{$EXTENSION_PREFIX}-auto-filler li .sn-card-component_accent-bar {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.#{$EXTENSION_PREFIX}-auto-filler li .sn-card-component_accent-bar.sn-card-component_accent-bar_dark {
+    z-index: 1;
+}
+
+.#{$EXTENSION_PREFIX}-auto-filler li:not(:first-child) .sn-card-component_accent-bar:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 260px;
+    background-color: inherit;
+}
+
+.#{$EXTENSION_PREFIX}-auto-filler li:not(:last-child) .sn-card-component_accent-bar:after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    height: 1px;
+    width: 260px;
+    background-color: inherit;
+}
+
+.#{$EXTENSION_PREFIX}-auto-filler li strong {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.#{$EXTENSION_PREFIX}-auto-filler li small {
+    color: #777;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.#{$EXTENSION_PREFIX}-auto-filler li[data-#{$EXTENSION_PREFIX}-autofill-type="namespace"] {
+    padding: 6px 5px 5px 10px;
+}
+
+.#{$EXTENSION_PREFIX}-auto-filler li[data-#{$EXTENSION_PREFIX}-autofill-type="namespace"] strong {
+    flex-grow: 1;
+    margin: 0 5px;
+}
+
+.#{$EXTENSION_PREFIX}-auto-filler li i {
+    align-self: center;
+}
+
+.#{$EXTENSION_PREFIX}-auto-filler li[data-#{$EXTENSION_PREFIX}-autofill-type="replacement"] > div:not(.sn-card-component_accent-bar) {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0;
+    overflow: hidden;
+}
+
+.#{$EXTENSION_PREFIX}-auto-filler li[data-#{$EXTENSION_PREFIX}-autofill-type="replacement"] .icon-chevron-right {
+    display: none;
+}
+
+.#{$EXTENSION_PREFIX}-auto-filler li[data-#{$EXTENSION_PREFIX}-autofill-type="replacement"][data-#{$EXTENSION_PREFIX}-hovering="true"] .icon-chevron-right,
+.#{$EXTENSION_PREFIX}-auto-filler li[data-#{$EXTENSION_PREFIX}-autofill-type="replacement"][data-#{$EXTENSION_PREFIX}-focusing="true"] .icon-chevron-right,
+.#{$EXTENSION_PREFIX}-auto-filler li[data-#{$EXTENSION_PREFIX}-autofill-type="replacement"][data-#{$EXTENSION_PREFIX}-artificial-focusing="true"] .icon-chevron-right {
+    display: block;
+}

@@ -1,0 +1,63 @@
+@import '../constants.scss';
+
+.#{$EXTENSION_PREFIX}-textarea-mirror {
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 200vh;
+    left: 200vw;
+    white-space: pre-wrap;
+}
+
+.#{$EXTENSION_PREFIX}-textarea-tooltip {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    display: flex;
+    align-items: center;
+    padding: .2em .4em !important;
+    width: initial !important;
+    height: initial !important;
+    min-height: initial !important;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    font-size: 13px !important;
+}
+
+.#{$EXTENSION_PREFIX}-textarea-tooltip button {
+    height: 18px;
+    width: 18px;
+    padding: 0;
+    margin-right: .444em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 90%;
+}
+
+textarea[data-#{$EXTENSION_PREFIX}-has-sub-bar=true]:not(:read-only) {
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+textarea[data-#{$EXTENSION_PREFIX}-has-sub-bar=true] ~ .#{$EXTENSION_PREFIX}-textarea-sub-bar {
+    display: flex;
+    border-top-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-top: 0 !important;
+    padding: 3px 0 3px 6px !important;
+    justify-content: flex-end;
+    height: initial !important;
+}
+
+textarea[data-#{$EXTENSION_PREFIX}-has-sub-bar=true]:read-only ~ .#{$EXTENSION_PREFIX}-textarea-sub-bar,
+textarea:not([data-#{$EXTENSION_PREFIX}-has-sub-bar=true]) ~ .#{$EXTENSION_PREFIX}-textarea-sub-bar {
+    display: none !important;
+}
+
+.#{$EXTENSION_PREFIX}-textarea-sub-bar > * {
+    margin: 0 !important;
+    margin-right: 6px !important;
+}

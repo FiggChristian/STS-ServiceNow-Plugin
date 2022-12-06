@@ -1,0 +1,55 @@
+##{$EXTENSION_PREFIX}-form {
+    max-width: 60em;
+    margin: 0 auto;
+    padding: 2em .75em;
+    font-family: "Source Sans Pro", SourceSansPro, "Helvetica Neue", Arial !important;
+
+    h3 {
+        margin-top: 0;
+    }
+
+    .form-field textarea {
+        width: 100%;
+        resize: none;
+    
+        &:placeholder-shown {
+            font-style: italic;
+        }
+    
+        &::placeholder {
+            font-style: italic;
+        }
+    }
+
+    table {
+        width: 100%;
+    }
+
+    tr + tr {
+        border-top: 1px solid #ccc;
+    }
+
+    tr table {
+        margin-left: 1em;
+        width: calc(100% - 1em);
+    }
+
+    table .form-field label {
+        margin: 0;
+
+        input[type=checkbox] {
+            margin: 0;
+        }
+    }
+
+    label {
+        margin: 1em 0 .25em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h5 {
+            margin: 0;
+        }
+    }
+}

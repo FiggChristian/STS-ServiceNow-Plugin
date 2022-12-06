@@ -1,0 +1,8 @@
+@import '../constants.scss';
+
+.#{$EXTENSION_PREFIX}-markdown-previewer {
+    overflow: visible !important;
+    height: initial !important;
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}

@@ -1,0 +1,265 @@
+<form id="{{constants.EXTENSION_PREFIX}}-form">
+  <h3>STS ServiceNow Plugin Settings</h3>
+  <p>
+    You can change different settings for the plugin below. Most settings will
+    save right away when you change them. You can reset settings back to their
+    default value by clicking the
+    <button
+      tabindex="-1"
+      style="pointer-events: none"
+      type="button"
+      class="btn btn-default"
+    >
+      Reset
+    </button>
+    button.
+  </p>
+  <fieldset id="enabled" class="form-group">
+    <legend><h4 id="enabled">Enabled</h4></legend>
+    <p>Enable or disable different parts of the plugin.</p>
+    <table>
+      <tr>
+        <td>
+          <div class="form-field">
+            <label for="enabled-all">
+              Everything:
+              <input type="checkbox" id="enabled-all" />
+            </label>
+          </div>
+          <small>
+            Enables/disables all of the plugin's features at once.
+          </small>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <!-- <table>
+            <tr>
+              <td>
+                <div class="form-field">
+                  <label for="enabled-service-now">
+                    ServiceNow:
+                    <input type="checkbox" id="enabled-service-now" />
+                  </label>
+                </div>
+                <small>
+                  Enables/disables all ServiceNow-related features at once.
+                </small>
+              </td>
+            </tr>
+            <tr>
+              <td> -->
+          <table>
+            <tr>
+              <td>
+                <div class="form-field">
+                  <label for="enabled-service-now-autocomplete">
+                    Autocomplete Templates:
+                    <input
+                      type="checkbox"
+                      id="enabled-service-now-autocomplete"
+                    />
+                  </label>
+                </div>
+                <small>
+                  Enables/disables whether autocomplete templates will be
+                  suggested when you insert the cursor into an empty textbox.
+                </small>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-field">
+                  <label for="enabled-service-now-macros">
+                    Macros:
+                    <input type="checkbox" id="enabled-service-now-macros" />
+                  </label>
+                </div>
+                <small>
+                  Enables/disables whether the Apply Macro button will be shown
+                  underneath textboxes.
+                </small>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-field">
+                  <label for="enabled-service-now-markdown">
+                    Markdown:
+                    <input type="checkbox" id="enabled-service-now-markdown" />
+                  </label>
+                </div>
+                <small>
+                  Enables/disables whether Markdown (e.g.,
+                  <strong>**bold**</strong> or <em>*italicized*</em> text) will
+                  be turned into fancy text when you respond to a ticket or left
+                  as plain text with no formatting.
+                </small>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-field">
+                  <label for="enabled-service-now-smart-text">
+                    Smart Text:
+                    <input
+                      type="checkbox"
+                      id="enabled-service-now-smart-text"
+                    />
+                  </label>
+                </div>
+                <small>
+                  Enables/disables whether MAC addresses, IP addresses, etc.
+                  will be underlined and show a menu when you hover over them in
+                  tickets.
+                </small>
+              </td>
+            </tr>
+          </table>
+          <!-- </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-field">
+                  <label for="enabled-netdb">
+                    NetDB:
+                    <input type="checkbox" id="enabled-netdb" />
+                  </label>
+                </div>
+                <small>
+                  Enables/disables all NetDB-related features at once.
+                </small>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table>
+                  <tr>
+                    <td>
+                      <div class="form-field">
+                        <label for="enabled-netdb-mac-linking">
+                          MAC Address Linking:
+                          <input
+                            type="checkbox"
+                            id="enabled-netdb-mac-linking"
+                          />
+                        </label>
+                      </div>
+                      <small>
+                        Enables/disables whether NetDB will link MAC addresses
+                        in Nodes to DHCP log.
+                      </small>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="form-field">
+                        <label for="enabled-netdb-history-highlight">
+                          MAC Address Highlighting:
+                          <input
+                            type="checkbox"
+                            id="enabled-netdb-history-highlight"
+                          />
+                        </label>
+                      </div>
+                      <small>
+                        Enables/disables whether NetDB will highlight the
+                        searched-for MAC address.
+                      </small>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="form-field">
+                  <label for="enabled-dhcp-log">
+                    DHCP Log:
+                    <input type="checkbox" id="enabled-dhcp-log" />
+                  </label>
+                </div>
+                <small>
+                  Enables/disables whether DHCP Log will link IP addresses to
+                  NetDB.
+                </small>
+              </td>
+            </tr>
+          </table> -->
+        </td>
+      </tr>
+    </table>
+    <div style="display: flex; justify-content: flex-end">
+      <button id="enabled-reset" type="button" class="btn btn-default">
+        Reset
+      </button>
+    </div>
+  </fieldset>
+  <fieldset id="signature-fieldset" class="form-group">
+    <legend><h4 id="email-signature">Email Signature</h4></legend>
+    <p>
+      This controls the text that gets inserted at the end of emails when you
+      use a macro. It gets inserted by the
+      <code>\{{current_user.signature}}</code> replacement (like at the end of
+      the <a href="#autocomplete">Autocomplete</a> items below).
+    </p>
+    <div class="form-field">
+      <textarea
+        id="signature-textarea"
+        class="form-control"
+        placeholder="Enter a signature for the end of emails."
+      ></textarea>
+    </div>
+  </fieldset>
+  <fieldset id="autocomplete-fieldset" class="form-group">
+    <legend><h4 id="autocomplete">Autocomplete</h4></legend>
+    <p>
+      This controls the text that shows up when you put the cursor in a textbox.
+      It lets you quickly insert text more quickly as a template for all
+      tickets. Leaving it blank will prevent any autocomplete from showing up.
+    </p>
+    <div class="form-field">
+      <label for="autocomplete-comments-textarea">
+        <h5 id="additional-comments-autocomplete">
+          Additional Comments Autocomplete
+        </h5>
+      </label>
+      <textarea
+        id="autocomplete-comments-textarea"
+        class="form-control"
+        placeholder="No autocomplete template"
+      ></textarea>
+    </div>
+    <div class="form-field">
+      <label for="autocomplete-work_notes-textarea">
+        <h5 id="work-notes-autocomplete">Work Notes Autocomplete</h5>
+      </label>
+      <textarea
+        id="autocomplete-work_notes-textarea"
+        class="form-control"
+        placeholder="No autocomplete template"
+      ></textarea>
+    </div>
+    <div class="form-field">
+      <label for="autocomplete-close_notes-textarea">
+        <h5 id="close-notes-autocomplete">Close Notes Autocomplete</h5>
+      </label>
+      <textarea
+        id="autocomplete-close_notes-textarea"
+        class="form-control"
+        placeholder="No autocomplete template"
+      ></textarea>
+    </div>
+  </fieldset>
+  <p style="text-align: center">
+    Found a bug? Please report it! You can
+    <a href="https://github.com/FiggChristian/STS-ServiceNow-Plugin/issues"
+      >open a new GitHub issue</a
+    >
+    or
+    <a
+      href="mailto:figgchristian@gmail.com?subject=STS ServiceNow Plugin Issue&body=Please include a description of the issue and how to reproduce it."
+      >email me</a
+    >.
+  </p>
+</form>

@@ -1,2 +1,2 @@
-chrome.webNavigation.onCompleted.addListener((function(e){chrome.scripting.executeScript({target:{tabId:e.tabId,allFrames:!1},files:["./index.js"]})}),{url:[{hostContains:".service-now.com",pathPrefix:"/incident.do"},{hostContains:".service-now.com",pathPrefix:"/sc_task.do"},{hostContains:".service-now.com",pathPrefix:"/ticket.do"}]});
+chrome.webNavigation.onCompleted.addListener((function(e){chrome.scripting.executeScript({target:{tabId:e.tabId,frameIds:[e.frameId],allFrames:!1},files:["./index.user.js"],world:"MAIN"})}),{url:[{hostContains:"mydevices.stanford.edu"},{hostContains:"netdb.stanford.edu"},{hostContains:"day.stanford.edu",pathPrefix:"/manage/dhcplog/check_db"},{hostContains:"stanford.service-now.com"}]});
 //# sourceMappingURL=background.js.map
